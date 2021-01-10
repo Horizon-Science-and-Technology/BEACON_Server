@@ -2,6 +2,7 @@ import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
+import java.net.SocketException;
 
 /**
  * @author StarsEnd
@@ -12,6 +13,13 @@ public class UdpClient {
     private InetAddress remoteIP;
 
     private DatagramSocket socket; //UDP套接字
+    public UdpClient(){
+        try {
+            socket=new DatagramSocket();
+        } catch (SocketException e) {
+            e.printStackTrace();
+        }
+    }
 
     public UdpClient(String ip,String port)throws IOException {
         this.remotePort=Integer.parseInt(port);
@@ -22,7 +30,12 @@ public class UdpClient {
         //与本地一个固定的UDP端口绑定
         //   socket=new DatagramSocket(9000);
     }
-
+    public void setRemotePort(int port){
+        this.remotePort = port;
+    }
+    public void setRemoteIP(InetAddress ip){
+        this.remoteIP = ip;
+    }
     //定义一个数据的发送方法。
     public void send(String msg){
         try {
