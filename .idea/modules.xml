@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/BEACON_Server.iml" filepath="$PROJECT_DIR$/.idea/BEACON_Server.iml" />
       <module fileurl="file://$PROJECT_DIR$/echo/echo.iml" filepath="$PROJECT_DIR$/echo/echo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testCilent/testCilent.iml" filepath="$PROJECT_DIR$/testCilent/testCilent.iml" />
     </modules>
   </component>
 </project>
